@@ -1,0 +1,11 @@
+syntax = "proto3"; 
+package TestProto;//包名
+
+enum Opcode{
+	opcode_none = 0;
+}
+
+message TestMsg {
+    int64 Id=1; 
+    string Name=2;
+}
