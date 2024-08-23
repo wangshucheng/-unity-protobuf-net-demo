@@ -43,7 +43,24 @@ public class NewBehaviourScript : MonoBehaviour
         return result;
     }
     
-    public static T Deserialize<T>(byte[] message) where T :IExtensible
+    // public static T Deserialize<T>(byte[] message) where T :IExtensible
+    // {
+    //     T result;
+    //     using var stream = new MemoryStream(message);
+    //     result = Serializer.Deserialize<T>(stream);
+    //     return result;
+    // }
+    
+    public static byte[] Serialize(IMessage msg)
+    {
+        byte[] result;
+        using var stream = new MemoryStream();
+        Serializer.Serialize(stream, msg);
+        result = stream.ToArray();
+        return result;
+    }
+    
+    public static T Deserialize<T>(byte[] message) where T :IMessage
     {
         T result;
         using var stream = new MemoryStream(message);

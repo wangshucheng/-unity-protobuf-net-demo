@@ -6,6 +6,7 @@ enum Opcode{
 }
 
 message TestMsg {
-    int64 Id=1; 
+    int32 Id=1; 
     string Name=2;
+	Opcode Op=3;
 }
