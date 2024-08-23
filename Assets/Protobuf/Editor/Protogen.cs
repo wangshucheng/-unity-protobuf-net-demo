@@ -11,7 +11,7 @@ using System.IO;
 public class Protogen {
     [MenuItem("Bundle/Generate Protocs")]
     public static void GenerateProtobufCS(){
-		Generate(Application.dataPath + "/../proto/protos/", new string[]{"test.proto"},Application.dataPath + "/../protogen/");
+		Generate(Application.dataPath + "/../proto/protos/", new string[]{"test.proto"},Application.dataPath + "/Scripts/protos");
     }
     static void Generate(string inpath,string[] inprotos,string outpath){
 
